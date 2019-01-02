@@ -198,6 +198,9 @@ function! EasyClip#Yank#PreYankMotion()
     let s:yankCount = v:count > 0 ? v:count : 1
     let s:activeRegister = v:register
 
+    " AT tweak: Add every yank position to the jumplist
+    normal! m'
+
     " This is necessary to get around a bug in vim where the active register persists to
     " the next command. Repro by doing "_d and then a command that uses v:register
     if s:activeRegister ==# "_"

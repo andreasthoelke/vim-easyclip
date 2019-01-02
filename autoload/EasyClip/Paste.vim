@@ -292,16 +292,16 @@ function! EasyClip#Paste#ToggleFormattedPaste()
 endfunction
 
 function! EasyClip#Paste#SwapPaste(forward)
-    if !EasyClip#Paste#WasLastChangePaste()
-        if (a:forward) && exists('g:EasyClipSwapPasteForwardFallback')
-            exec g:EasyClipSwapPasteForwardFallback
-        elseif (!a:forward) && exists('g:EasyClipSwapPasteBackwardsFallback')
-            exec g:EasyClipSwapPasteBackwardsFallback
-        else
-            echo 'Last action was not paste, swap ignored'
-        endif
-        return
-    endif
+    " if !EasyClip#Paste#WasLastChangePaste()
+    "     if (a:forward) " && exists('g:EasyClipSwapPasteForwardFallback')
+    "         exec g:EasyClipSwapPasteForwardFallback
+    "     elseif (!a:forward) " && exists('g:EasyClipSwapPasteBackwardsFallback')
+    "         exec g:EasyClipSwapPasteBackwardsFallback
+    "     else
+    "         echo 'Last action was not paste, swap ignored'
+    "     endif
+    "     return
+    " endif
 
     if s:isSwapping
         " Stop checking to end the swap session
