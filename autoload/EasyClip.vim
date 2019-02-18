@@ -81,7 +81,7 @@ endfunction
 function! EasyClip#CheckRequiredDependencies()
     try
         " This should have no effect when it succeeds
-        call repeat#invalidate()
+        " call repeat#invalidate()
     catch /\VUnknown function/
         echohl ErrorMsg
         echo 'Could not find vim-repeat installed.  EasyClip requires vim-repeat to function properly.  Please install vim-repeat and restart Vim'
